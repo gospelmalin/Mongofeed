@@ -9,6 +9,7 @@ import com.mongodb.MongoClient;
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
+import com.mongodb.client.model.Filters;
 
 public class Database {
 	
@@ -59,5 +60,16 @@ public class Database {
 		//TODO
 	}
 
+
+	//show feeds for specific user
+	public void getDocumentsForUser(String username) {
+		MongoDatabase database= connectMongo();
+		MongoCollection<Document> feeds = database.getCollection("feedsCollection");
+		FindIterable<Document> documents = feeds.find(Filters.eq("Author", username));
+		Iterator it = documents.iterator();
+			while (it.hasNext()) {
+				System.out.println(it.next());
+			}
+	}
 
 }
