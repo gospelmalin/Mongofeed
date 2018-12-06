@@ -16,6 +16,11 @@ public class Database {
 	}
 	
 	
-		
+	// create new collection
+	public void createCollection(String collectionName) {
+		MongoDatabase database= connectMongo();
+		database.createCollection(collectionName);		
+		}
+	
 	
 }
