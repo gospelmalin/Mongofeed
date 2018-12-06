@@ -72,4 +72,16 @@ public class Database {
 			}
 	}
 
+	//close database connection
+	public void closeMongo() {
+		//TODO
+		//mongo.close();
+	}
+	
+	//get feeds
+	public void getCollection() {
+		//TODO
+	}
+
+	
 }
