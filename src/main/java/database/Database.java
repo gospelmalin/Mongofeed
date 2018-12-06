@@ -1,10 +1,12 @@
 package database;
 
 import java.util.Date;
+import java.util.Iterator;
 
 import org.bson.Document;
 
 import com.mongodb.MongoClient;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 
@@ -40,5 +42,22 @@ public class Database {
 				.append("Likes", likes);
 		feeds.insertOne(feed);
 	}
+	
+	//show all feeds part 1: get the feeds
+	public void getAllDocuments() {
+		MongoDatabase database= connectMongo();
+		MongoCollection<Document> feeds = database.getCollection("feedsCollection");
+		FindIterable<Document> documents = feeds.find();
+		Iterator it = documents.iterator();
+			while (it.hasNext()) {
+				System.out.println(it.next());
+			}
+	}
+	
+	//show all feeds part 2: print relevant info
+	public void showFeeds() {
+		//TODO
+	}
+
 
 }

@@ -14,6 +14,7 @@ public class Main {
 		//String content = "A mongofeed";
 		String content = "A second feed from another user";
 		db.insertFeedDocument(author, content);
+		db.getAllDocuments();
 
 
 
