@@ -13,12 +13,14 @@ import com.mongodb.client.model.Filters;
 
 public class Database {
 	
-	private String ip = "yourIPAdress";
-	private int port = 27017;
+	PropertiesReader pr = new PropertiesReader();
+	private String ip = pr.getIpProperty();
+	private int port = Integer.parseInt(pr.getPortProperty());
 	
 	//connect to mongo database
 	public MongoDatabase connectMongo() {
 	MongoClient mongo = new MongoClient(ip, port);
+	//System.out.println("connectMongo prints ip: " + ip + " and port: " + port);
 	MongoDatabase database = mongo.getDatabase("mongofeed");
 	return database;
 	}

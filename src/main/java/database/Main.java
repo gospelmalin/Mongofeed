@@ -17,9 +17,9 @@ public class Main {
 		//db.getAllDocuments();
 		String username ="Malin Albinsson";
 		db.getDocumentsForUser(username);
-		PropertiesReader pr = new PropertiesReader();
-		String ip = pr.getIpProperty();
-		System.out.println("Main prints ip from Properties: " + ip);
+		//PropertiesReader pr = new PropertiesReader();
+		//String port = pr.getPortProperty();
+		//System.out.println("Main prints port from Properties: " + port);
 
 
 
