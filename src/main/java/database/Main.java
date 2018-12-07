@@ -18,7 +18,8 @@ public class Main {
 		String username ="Malin Albinsson";
 		db.getDocumentsForUser(username);
 		PropertiesReader pr = new PropertiesReader();
-		pr.getIpProperty();
+		String ip = pr.getIpProperty();
+		System.out.println("Main prints ip from Properties: " + ip);
 
 
 
