@@ -19,13 +19,11 @@ public class PropertiesReader {
 			// load a properties file
 			prop.load(input);
 	
-			// get the property value and print it out
+			// get the property value for ip-address and print it out
 			System.out.println(prop.getProperty("ip"));
-			System.out.println(prop.getProperty("port"));
 			
 			// set property value to return variable
 			ip = prop.getProperty("ip");
-			//System.out.println("This is the ip-address: " + ip);
 	
 		} catch (IOException e) {
 			System.err.println("An IOException occurred when reading properties. "+e.getMessage());
@@ -33,4 +31,29 @@ public class PropertiesReader {
 		return ip;
 
 	}
+	
+	public String getPortProperty() {
+		Properties prop = new Properties();
+		InputStream input = null;
+		String port = null;
+
+			try {
+		
+				input = new FileInputStream("properties.properties");
+		
+				// load a properties file
+				prop.load(input);
+		
+				// get the property value for port and print it out
+				System.out.println("Port is: " + prop.getProperty("port"));
+				
+				// set property value to return variable
+				port = prop.getProperty("port");
+		
+			} catch (IOException e) {
+				System.err.println("An IOException occurred when reading properties. "+e.getMessage());
+			}
+			return port;
+
+		}
 }
