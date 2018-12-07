@@ -8,15 +8,17 @@ public class Main {
 		//String collectionName = "feedsCollection";
 	//	db.createCollection(collectionName);
 		//String author = "Malin Albinsson";
-		String author = "Markus Holmberg";
+		//String author = "Markus Holmberg";
 		//String content = "My first feed";
 		//String content = "My second feed";
 		//String content = "A mongofeed";
-		String content = "A second feed from another user";
-		db.insertFeedDocument(author, content);
+		//String content = "A second feed from another user";
+		//db.insertFeedDocument(author, content);
 		//db.getAllDocuments();
 		String username ="Malin Albinsson";
 		db.getDocumentsForUser(username);
+		PropertiesReader pr = new PropertiesReader();
+		pr.getIpProperty();
 
 
 
