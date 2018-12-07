@@ -20,7 +20,7 @@ public class PropertiesReader {
 			prop.load(input);
 	
 			// get the property value for ip-address and print it out
-			System.out.println(prop.getProperty("ip"));
+			//System.out.println(prop.getProperty("ip"));
 			
 			// set property value to return variable
 			ip = prop.getProperty("ip");
@@ -45,7 +45,7 @@ public class PropertiesReader {
 				prop.load(input);
 		
 				// get the property value for port and print it out
-				System.out.println("Port is: " + prop.getProperty("port"));
+				//System.out.println("Port is: " + prop.getProperty("port"));
 				
 				// set property value to return variable
 				port = prop.getProperty("port");
